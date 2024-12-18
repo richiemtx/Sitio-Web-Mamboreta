@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400,500,600,700,800&display=swap');
+/* Importa la fuente "Poppins" desde Google Fonts, con distintos grosores. */
+
+/* Estilos Menú */
+* {
+    margin: 0; /* Elimina márgenes predeterminados. */
+    padding: 0; /* Elimina rellenos predeterminados. */
+    box-sizing: border-box; /* Incluye bordes y padding dentro del tamaño total. */
+    text-decoration: none; /* Quita la decoración de texto, como subrayados en enlaces. */
+    list-style: none; /* Elimina los estilos de lista predeterminados. */
+}
+
+/* Para mover la imagen y el título hacia abajo */
+.presentacion-info img {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente 'Poppins' como principal y, si no está disponible, usa cualquier fuente sans-serif */
+    background-color: #e1e2e6; /*Color del fondo */
+    margin: 0; 
+    padding: 0;
+}
+
+.presentacion-info h2 {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+    background-color: #000; /* Asegurar que el fondo del menú sea visible */
+    padding: 10px 0; /* Espaciado vertical */
+    margin-top: -90px; /* Mueve el menú hacia arriba */
+}
+
+.navbar ul {
+    display: flex; /* Usar flexbox para manejar la distribución de los elementos */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 0; /* Remover padding por defecto de los ul */
+}
+
+.navbar ul li {
+    position: relative; /* Posición relativa para submenús o efectos. */
+}
+
+.navbar ul li a {
+    font-size: 18px; /* Tamaño de fuente de los enlaces del menú. */
+    padding: 10px; /* Espaciado interno de los enlaces. */
+    color: #fffdfc; /* Color blanco para los enlaces. */
+    display: block; /* Hace que los enlaces ocupen todo el ancho disponible. */
+    font-weight: 600; /* Define un grosor medio del texto. */
+}
+
+.navbar ul li a:hover {
+    color: #ce967b; /* Cambia el color del texto al pasar el cursor. */
+    text-decoration: none; /* Elimina la subrayado al pasar el cursor. */
+}
+
+.presentacion-info img {
+    max-width: 200px;
+    margin-bottom: -30px;
+    margin-top: -20px;
+    float: right;
+    margin-left: 20px;
+}
+
+.presentacion {
+    padding: 100px 0px; /* Agrega un relleno de 100px en la parte superior e inferior, y 0px en los lados */
+    background-color: #000000; /* Establece el color de fondo como negro (#000000) */
+}
+
+.presentacion-info h2 {
+    font-size: 55px; /* Establece el tamaño de la fuente en 55px */
+    line-height: 70px; /* Define el interlineado en 70px */
+    color: #ffffff; /* Establece el color del texto en blanco (#ffffff) */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px */
+}
+
+.presentacion-txt {
+    display: flex; /* Usa el modelo de caja flexible (Flexbox) */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos de manera uniforme */
+}
+
+.txt h4 {
+    font-size: 18px; /* Establece el tamaño de la fuente en 18px */
+    color: #a7a7a7; /* Define el color del texto en gris claro (#a7a7a7) */
+    margin-bottom: 0px; /* Añade un margen inferior de 30px */
+}
+
+/* Estilo para la sección de ingreso */
+.ingresar-section {
+    background-image: url(images/Barra.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 100px;
+}
+
+.ingresar-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.ingresar-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.ingresar-content p {
+    color: #a7a7a7;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.ingresar-content label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.ingresar-content input[type="text"],
+.ingresar-content input[type="email"],
+.ingresar-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Alineación de la casilla de "Recordar usuario en este sitio" */
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: -5px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.remember-me label {
+    font-size: 14px;
+}
+
+/* Opción de "Olvidé la contraseña" */
+.forgot-password {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el botón de ingresar */
+.btn-1 {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn-1:hover {
+    background-color: #218838;
+    color: #000000;
+}
+
+/* Estilos para los botones de redes sociales */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Modal de éxito */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal.mostrar {
+    opacity: 1;
+    display: flex;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 300px;
+}
+
+.modal-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #f2a365;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #d18f52;
+}
+
+/* Seccion del footer */
+.horario {
+    padding: 50px 0px; /* Aplica un relleno superior e inferior de 100px. */
+    background-color: #000000; /* Establece un fondo negro para esta sección. */
+}
+
+.horario-info h2 {
+    font-size: 55px; /* Define un tamaño de fuente grande para los encabezados h2 de esta sección. */
+    line-height: 70px; /* Establece un interlineado adecuado. */
+    color: #a7a7a7; /* Aplica un color blanco al texto del encabezado. */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del encabezado. */
+}
+
+.horario-txt {
+    display: flex; /* Define un contenedor flexible para alinear los elementos hijos horizontalmente. */
+    justify-content: space-between; /* Distribuye uniformemente los elementos con espacio entre ellos. */
+}
+
+.txt {
+    color: #ffffff; /* Aplica un color blanco al texto dentro de esta clase. */
+}
+
+.txt h4 {
+    margin-top: 0px;
+    font-size: 18px; /* Define un tamaño de fuente estándar para los encabezados h4. */
+    color: #a7a7a7; /* Aplica un color gris claro al texto. */
+    margin-bottom: 30px; /* Añade un margen inferior de 30px debajo del encabezado. */
+}
+
+.txt p {
+    font-size: 18px; /* Define un tamaño de fuente estándar para los párrafos. */
+    color: #323337;
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas. */
+    font-weight: 100; /* Establece un peso de fuente audaz. */
+    margin-bottom: 15px; /* Añade un margen inferior de 15px debajo del párrafo. */
+}
+
+.footer-content {
+    padding-bottom: 20; /* Elimina espacio interno en la parte inferior */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content h4 {
+    margin: 15px;
+    font-size: 18px;
+    color: #a7a7a7;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-content p {
+    color: white; /* Establece un color blanco para el texto. */
+    margin: 0; /* Elimina los márgenes predeterminados del párrafo. */
+    font-size: 16px; /* Ajusta el tamaño del texto a 16px. */
+}
+
+/* Diseño responsivo */
+/* Para pantallas pequeñas (tablets y teléfonos móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Cambia el menú a una columna */
+        padding: 15px 0;
+        margin-top: 0; /* Ajusta la posición en pantallas pequeñas */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambia la distribución de los elementos a una columna */
+        gap: 10px; /* Espaciado más pequeño entre los enlaces */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: center; /* Centra los textos */
+    }
+}
+
+/* Para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 14px; /* Ajusta el tamaño de la fuente aún más */
+        padding: 8px; /* Reduce el padding para un mejor ajuste */
+    }
+}
+
+/* Tablets y pantallas medianas (max-width: 768px) */
+@media (max-width: 768px) {
+    .presentacion {
+        padding: 50px 20px; /* Reduce el padding */
+    }
+
+    .presentacion-info h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 40px; /* Reduce el tamaño del encabezado */
+        line-height: 50px;
+    }
+
+    .presentacion-info img {
+        max-width: 150px; /* Reduce el tamaño de la imagen */
+        margin: 10px auto; /* Centra la imagen */
+        float: none; /* Elimina el flotado */
+        display: block;
+    }
+
+    .presentacion-txt {
+        text-align: center; /* Centra el texto horizontalmente. */
+        flex-direction: column; /* Cambia a una columna */
+        gap: 20px; /* Añade espacio entre elementos */
+    }
+
+    .barra {
+        font-size: 25px; /* Reduce el tamaño de fuente */
+    }
+}
+
+/* Teléfonos móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    .presentacion {
+        padding: 30px 10px; /* Reduce aún más el padding */
+    }
+
+    .presentacion-info h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 30px; /* Reduce aún más el tamaño del encabezado */
+        line-height: 40px;
+    }
+
+    .presentacion-info img {
+        max-width: 120px; /* Ajusta el tamaño de la imagen */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .barra {
+        font-size: 20px; /* Reduce el tamaño de fuente */
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .txt h4,
+    .txt p {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}
+
+@media (max-width: 992px) {
+    .horario {
+        padding: 50px 20px; /* Reduce el relleno para pantallas medianas. */
+    }
+
+    .horario-info h2 {
+        font-size: 40px; /* Reduce el tamaño del encabezado. */
+        line-height: 50px; /* Ajusta la altura de línea. */
+    }
+
+    .horario-txt {
+        flex-direction: column; /* Cambia la disposición de horizontal a vertical. */
+        align-items: center; /* Centra los elementos. */
+        text-align: center; /* Centra el texto para mejor visibilidad. */
+    }
+
+    .txt {
+        margin-bottom: 30px; /* Añade separación entre las secciones. */
+    }
+
+    .txt p {
+        font-size: 16px; /* Ajusta el tamaño del texto para pantallas medianas. */
+    }
+}
+
+/* Estilos Responsivos para .footer */
+@media (max-width: 576px) {
+    .footer {
+        padding: 20px; /* Reduce el relleno para pantallas muy pequeñas. */
+    }
+
+    .footer-content p {
+        font-size: 14px; /* Reduce el tamaño del texto para mayor legibilidad. */
+    }
+}
+
+/* Ajuste para .arrow-up */
+@media (max-width: 768px) {
+    .arrow-up {
+        margin-top: -100px; /* Reduce el valor negativo para evitar solapamientos. */
+    }
+}

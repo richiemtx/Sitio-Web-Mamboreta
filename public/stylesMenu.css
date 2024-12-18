@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400,500,600,700,800&display=swap');
+/* Importa la fuente "Poppins" desde Google Fonts, con distintos grosores. */
+
+/* Estilos Menú */
+* {
+    margin: 0; /* Elimina márgenes predeterminados. */
+    padding: 0; /* Elimina rellenos predeterminados. */
+    box-sizing: border-box; /* Incluye bordes y padding dentro del tamaño total. */
+    text-decoration: none; /* Quita la decoración de texto, como subrayados en enlaces. */
+    list-style: none; /* Elimina los estilos de lista predeterminados. */
+}
+
+/* Para mover la imagen y el título hacia abajo */
+.presentacion-info img {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+.presentacion-info h2 {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+    background-color: #000; /* Asegurar que el fondo del menú sea visible */
+    padding: 10px 0; /* Espaciado vertical */
+    margin-top: -90px; /* Mueve el menú hacia arriba */
+}
+
+.navbar ul {
+    display: flex; /* Usar flexbox para manejar la distribución de los elementos */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 0; /* Remover padding por defecto de los ul */
+}
+
+.navbar ul li {
+    position: relative; /* Posición relativa para submenús o efectos. */
+}
+
+.navbar ul li a {
+    font-size: 18px; /* Tamaño de fuente de los enlaces del menú. */
+    padding: 10px; /* Espaciado interno de los enlaces. */
+    color: #fffdfc; /* Color blanco para los enlaces. */
+    display: block; /* Hace que los enlaces ocupen todo el ancho disponible. */
+    font-weight: 600; /* Define un grosor medio del texto. */
+}
+
+.navbar ul li a:hover {
+    color: #ce967b; /* Cambia el color del texto al pasar el cursor. */
+    text-decoration: none; /* Elimina la subrayado al pasar el cursor. */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente 'Poppins' como principal y, si no está disponible, usa cualquier fuente sans-serif */
+    justify-content: center;
+    align-items: center;
+}
+
+.presentacion-info img {
+    max-width: 200px;
+    margin-bottom: -30px;
+    margin-top: -20px;
+    float: right;
+    margin-left: 20px;
+}
+
+.presentacion {
+    padding: 100px 0px; /* Agrega un relleno de 100px en la parte superior e inferior, y 0px en los lados */
+    background-color: #000000; /* Establece el color de fondo como negro (#000000) */
+}
+
+.presentacion-info h2 {
+    font-size: 55px; /* Establece el tamaño de la fuente en 55px */
+    line-height: 70px; /* Define el interlineado en 70px */
+    color: #ffffff; /* Establece el color del texto en blanco (#ffffff) */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px */
+}
+
+.presentacion-txt {
+    display: flex; /* Usa el modelo de caja flexible (Flexbox) */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos de manera uniforme */
+}
+
+/* Barra (Nombres) */ 
+.barra {
+    background-color: #ce967b; /* Color de fondo */
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff; /* Color del texto */
+    padding: 15px; /* Espaciado alrededor del texto */
+    font-size: 30px; /* Tamaño de fuente */
+}
+
+.txt {
+    color: #ffffff; /* Establece el color del texto en blanco (#ffffff) */
+}
+
+.txt h4 {
+    font-size: 18px; /* Establece el tamaño de la fuente en 18px */
+    color: #a7a7a7; /* Define el color del texto en gris claro (#a7a7a7) */
+    margin-bottom: 30px; /* Añade un margen inferior de 30px */
+}
+
+.txt p {
+    font-size: 18px; /* Establece el tamaño de la fuente en 18px */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-weight: 600; /* Aplica un peso de fuente seminegrita */
+    margin-bottom: 15px; /* Añade un margen inferior de 15px */
+}
+
+h2 {
+    font-size: 55px; /* Define un tamaño de fuente grande para los encabezados h2. */
+    line-height: 70px; /* Establece un interlineado adecuado para los encabezados. */
+    color: #323337; /* Aplica un color gris oscuro al texto del encabezado. */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del encabezado. */
+}
+
+p {
+    font-size: 16px; /* Define un tamaño de fuente estándar para los párrafos. */
+    color: #414247; /* Aplica un color gris oscuro al texto. */
+    margin: 25px 0 45px 0; /* Establece márgenes superior, inferior e izquierdo/derecho. */
+}
+
+.general {
+    display: flex; /* Define un contenedor flexible para alinear los elementos horizontalmente. */
+}
+
+.general-1 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-2 {
+    background-image: url(images/LimonadasMambo.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-3 {
+    background-image: url(images/LimonadaFrutosRojos.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-4 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-5 {
+    background-image: url(images/LimonadaLavanda.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-6 {
+    background-image: url(images/LimonadaPanambi.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-7 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-8 {
+    background-image: url(images/FrappéMordisko.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-9 {
+    background-image: url(images/ChocolateEspecial.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-10 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-11 {
+    background-image: url(images/ChapataJamonPavo.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-12 {
+    background-image: url(images/ChapataJamonSerrano.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-13 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-14 {
+    background-image: url(images/ChapataVegetariana.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-15 {
+    background-image: url(images/ChilaquilesBarbacoa.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-16 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-17 {
+    background-image: url(images/ChilaquilesChicharron.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-18 {
+    background-image: url(images/ChilaquilesPoblanos.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-19 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-20 {
+    background-image: url(images/TortaChilaquiles.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-21 {
+    background-image: url(images/EnsaladaArrachera.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-22 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-23 {
+    background-image: url(images/EnsaladaPolloCrispy.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-24 {
+    background-image: url(images/Pizza.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-25 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-26 {
+    background-image: url(images/PizzaPPS.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-27 {
+    background-image: url(images/AvocadoToast.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-28 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-29 {
+    background-image: url(images/HuevosMotuleños.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-30 {
+    background-image: url(images/MambolletesArrachera.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-31 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-32 {
+    background-image: url(images/Nachos.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-33 {
+    background-image: url(images/SandwichMamboreta.jpg); /* Define otra imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-34 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-35 {
+    background-image: url(images/SliderChipotudla.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+.general-36 {
+    background-image: url(images/Waffles.jpg); /* Define una imagen de fondo específica. */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Asegura que la imagen cubra todo el ancho y alto del elemento. */
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+}
+
+/* Seccion del footer */
+.horario {
+    padding: 50px 0px; /* Aplica un relleno superior e inferior de 100px. */
+    background-color: #000000; /* Establece un fondo negro para esta sección. */
+}
+
+.horario-info h2 {
+    font-size: 55px; /* Define un tamaño de fuente grande para los encabezados h2 de esta sección. */
+    line-height: 70px; /* Establece un interlineado adecuado. */
+    color: #ffffff; /* Aplica un color blanco al texto del encabezado. */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del encabezado. */
+}
+
+.horario-txt {
+    display: flex; /* Define un contenedor flexible para alinear los elementos hijos horizontalmente. */
+    justify-content: space-between; /* Distribuye uniformemente los elementos con espacio entre ellos. */
+}
+
+.txt {
+    color: #ffffff; /* Aplica un color blanco al texto dentro de esta clase. */
+}
+
+.txt h4 {
+    margin-top: 0px;
+    font-size: 18px; /* Define un tamaño de fuente estándar para los encabezados h4. */
+    color: #a7a7a7; /* Aplica un color gris claro al texto. */
+    margin-bottom: 30px; /* Añade un margen inferior de 30px debajo del encabezado. */
+}
+
+.txt p {
+    font-size: 18px; /* Define un tamaño de fuente estándar para los párrafos. */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas. */
+    font-weight: 100; /* Establece un peso de fuente audaz. */
+    margin-bottom: 15px; /* Añade un margen inferior de 15px debajo del párrafo. */
+}
+
+.footer-content {
+    padding-bottom: 20; /* Elimina espacio interno en la parte inferior */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content h4 {
+    margin: 15px;
+    font-size: 18px;
+    color: #a7a7a7;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-content p {
+    color: white; /* Establece un color blanco para el texto. */
+    margin: 0; /* Elimina los márgenes predeterminados del párrafo. */
+    margin-top: 30px;
+    font-size: 16px; /* Ajusta el tamaño del texto a 16px. */
+}
+
+/* Diseño responsivo */
+/* Para pantallas pequeñas (tablets y teléfonos móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Cambia el menú a una columna */
+        padding: 15px 0;
+        margin-top: 0; /* Ajusta la posición en pantallas pequeñas */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambia la distribución de los elementos a una columna */
+        gap: 10px; /* Espaciado más pequeño entre los enlaces */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: center; /* Centra los textos */
+    }
+}
+
+/* Para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 14px; /* Ajusta el tamaño de la fuente aún más */
+        padding: 8px; /* Reduce el padding para un mejor ajuste */
+    }
+}
+
+/* Diseño responsivo */
+/* Tablets y pantallas medianas (max-width: 768px) */
+@media (max-width: 768px) {
+    .presentacion {
+        padding: 50px 20px; /* Reduce el padding */
+    }
+
+    .presentacion-info h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 40px; /* Reduce el tamaño del encabezado */
+        line-height: 50px;
+    }
+
+    .presentacion-info img {
+        max-width: 150px; /* Reduce el tamaño de la imagen */
+        margin: 10px auto; /* Centra la imagen */
+        float: none; /* Elimina el flotado */
+        display: block;
+    }
+
+    .presentacion-txt {
+        text-align: center; /* Centra el texto horizontalmente. */
+        flex-direction: column; /* Cambia a una columna */
+        gap: 20px; /* Añade espacio entre elementos */
+    }
+
+    .barra {
+        font-size: 25px; /* Reduce el tamaño de fuente */
+    }
+}
+
+/* Teléfonos móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    .presentacion {
+        padding: 30px 10px; /* Reduce aún más el padding */
+    }
+
+    .presentacion-info h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 30px; /* Reduce aún más el tamaño del encabezado */
+        line-height: 40px;
+    }
+
+    .presentacion-info img {
+        max-width: 120px; /* Ajusta el tamaño de la imagen */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .barra {
+        font-size: 20px; /* Reduce el tamaño de fuente */
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .txt h4,
+    .txt p {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}
+
+/* Mediante media queries, cambiamos el diseño a una sola columna en pantallas pequeñas */
+/* Bebidas */
+@media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-2, .general-3 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-4 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-5, .general-6 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-7 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-8, .general-9 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ /* Chapatas */
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-10 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-11, .general-12 {
+        width: 100%;
+        padding: 200px;
+    }
+
+    .general-13 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-14 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ /* Chilaquiles */
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-16 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-15, .general-17 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-19 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-18, .general-20 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ /* Ensaladas */
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-22 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-21, .general-23 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ /* Pizzas */
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-25 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-24, .general-26 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ /* Otros Platillos */
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-28 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-27, .general-29 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-31 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-30, .general-32 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-34 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-33, .general-35 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .general {
+        flex-direction: column;
+    }
+    
+    .general-28 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .general-36 {
+        width: 100%;
+        padding: 200px;
+    }
+ }
+
+ @media (max-width: 992px) {
+    .horario {
+        padding: 50px 20px; /* Reduce el relleno para pantallas medianas. */
+    }
+
+    .horario-info h2 {
+        font-size: 40px; /* Reduce el tamaño del encabezado. */
+        line-height: 50px; /* Ajusta la altura de línea. */
+    }
+
+    .horario-txt {
+        flex-direction: column; /* Cambia la disposición de horizontal a vertical. */
+        align-items: center; /* Centra los elementos. */
+        text-align: center; /* Centra el texto para mejor visibilidad. */
+    }
+
+    .txt {
+        margin-bottom: 30px; /* Añade separación entre las secciones. */
+    }
+
+    .txt p {
+        font-size: 16px; /* Ajusta el tamaño del texto para pantallas medianas. */
+    }
+}
+
+/* Estilos Responsivos para .footer */
+@media (max-width: 576px) {
+    .footer {
+        padding: 20px; /* Reduce el relleno para pantallas muy pequeñas. */
+    }
+
+    .footer-content p {
+        font-size: 14px; /* Reduce el tamaño del texto para mayor legibilidad. */
+    }
+}
+
+/* Ajuste para .arrow-up */
+@media (max-width: 768px) {
+    .arrow-up {
+        margin-top: -100px; /* Reduce el valor negativo para evitar solapamientos. */
+    }
+}
