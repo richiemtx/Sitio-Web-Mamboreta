@@ -42,39 +42,128 @@
             </div>
         </section>
     </header>
-
-    <!-- Sección: Formulario Reseñas -->
-    <section class="Formulario">
-        <form id="reseñasForm" class="text-center">
-            <div class="form-container">
-                <h2>Queremos escucharte</h2>
-                <h4>¿Alguna sugerencia para nuestra atención o servicio? ¡Haznos saber!</h4>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" class="form-control rounded-input" placeholder="Ingresa tu nombre"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" class="form-control rounded-input"
-                        placeholder="Ingresa tu apellido" required>
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo</label>
-                    <input type="email" id="correo" class="form-control rounded-input" placeholder="Ingresa tu correo"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="opiniones">Comentarios</label>
-                    <input type="text" id="comentarios" class="form-control rounded-input"
-                        placeholder="Escribenos tu opinión" required>
-                </div>
-                <button type="submit" class="btn btn-success">Enviar</button>
-            </div>
-        </form>
-    </section>
-    <script type="module" src="firebase.js"></script>
 </body>
+
+<!-- Sección: Formulario Reseñas -->
+<section class="Formulario">
+    <form id="reseñasForm" class="text-center">
+        <div class="form-container">
+            <h2>Queremos escucharte</h2>
+            <h4>¿Alguna sugerencia para nuestra atención o servicio? ¡Haznos saber!</h4>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control rounded-input" placeholder="Ingresa tu nombre"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" class="form-control rounded-input"
+                    placeholder="Ingresa tu apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" class="form-control rounded-input" placeholder="Ingresa tu correo"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="opiniones">Comentarios</label>
+                <input type="text" id="comentarios" class="form-control rounded-input"
+                    placeholder="Escríbenos tu opinión" required>
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>
+</section>
+
+<!-- Sección: Mostrar Reseñas -->
+<section class="Reseñas container mt-5">
+    <h2 class="text-center">Reseñas de Nuestros Clientes</h2>
+    <div id="reseñasList" class="reseñas-list">
+        <!-- Aquí se mostrarán las reseñas dinámicamente -->
+    </div>
+</section>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBqyMAMByTX0b0bqvHu-o9IoJSG3voYjsw",
+        authDomain: "mambo-4f8ba.firebaseapp.com",
+        projectId: "mambo-4f8ba",
+        storageBucket: "mambo-4f8ba.appspot.com",
+        messagingSenderId: "326320108967",
+        appId: "1:326320108967:web:2076ef0192aebbc7657282"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const reseñasForm = document.getElementById('reseñasForm');
+    const reseñasList = document.getElementById('reseñasList');
+
+    // Manejar el envío del formulario
+    reseñasForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const correo = document.getElementById('correo').value;
+        const comentarios = document.getElementById('comentarios').value;
+
+        try {
+            const docRef = await addDoc(collection(db, "reseñas"), {
+                nombre: nombre,
+                apellido: apellido,
+                correo: correo,
+                comentarios: comentarios
+            });
+
+            console.log("Reseña agregada con ID: ", docRef.id);
+            alert("¡Gracias por tu reseña!");
+
+            // Limpiar los campos del formulario
+            document.getElementById('nombre').value = '';
+            document.getElementById('apellido').value = '';
+            document.getElementById('correo').value = '';
+            document.getElementById('comentarios').value = '';
+
+            // Recargar las reseñas
+            cargarReseñas();
+        } catch (e) {
+            console.error("Error al agregar reseña: ", e);
+            alert("Hubo un error al enviar tu reseña. Intenta nuevamente.");
+        }
+    });
+
+    // Función para cargar las reseñas desde Firestore
+    const cargarReseñas = async () => {
+        try {
+            reseñasList.innerHTML = ""; // Limpiar la lista de reseñas
+            const q = query(collection(db, "reseñas"), orderBy("nombre", "asc"));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const reseña = doc.data();
+                const reseñaElement = document.createElement('div');
+                reseñaElement.className = "card mb-3";
+                reseñaElement.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${reseña.nombre} ${reseña.apellido}</h5>
+                        <p class="card-text">${reseña.comentarios}</p>
+                        <p class="card-text"><small class="text-muted">Correo: ${reseña.correo}</small></p>
+                    </div>
+                `;
+                reseñasList.appendChild(reseñaElement);
+            });
+        } catch (e) {
+            console.error("Error al cargar reseñas: ", e);
+        }
+    };
+
+    // Cargar las reseñas al cargar la página
+    cargarReseñas();
+</script>
 
 <!-- Footer -->
 <section class="horario">
@@ -129,55 +218,4 @@
         </div>
     </div>
 </section>
-
-<!-- Cargar Firebase a través del CDN -->
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-        apiKey: "AIzaSyBqyMAMByTX0b0bqvHu-o9IoJSG3voYjsw",
-        authDomain: "mambo-4f8ba.firebaseapp.com",
-        projectId: "mambo-4f8ba",
-        storageBucket: "mambo-4f8ba.appspot.com",
-        messagingSenderId: "326320108967",
-        appId: "1:326320108967:web:2076ef0192aebbc7657282"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    const reseñasForm = document.getElementById('reseñasForm');
-
-    reseñasForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const nombre = document.getElementById('nombre').value;
-        const apellido = document.getElementById('apellido').value;
-        const correo = document.getElementById('correo').value;
-        const comentarios = document.getElementById('comentarios').value;
-
-        try {
-            const docRef = await addDoc(collection(db, "reseñas"), {
-                nombre: nombre,
-                apellido: apellido,
-                correo: correo,
-                comentarios: comentarios
-            });
-
-            console.log("Reseña agregada con ID: ", docRef.id);
-            alert("¡Gracias por tu reseña!");
-
-            // Limpiar los campos del formulario
-            document.getElementById('nombre').value = '';
-            document.getElementById('apellido').value = '';
-            document.getElementById('correo').value = '';
-            document.getElementById('comentarios').value = '';
-        } catch (e) {
-            console.error("Error al agregar reseña: ", e);
-            alert("Hubo un error al enviar tu reseña. Intenta nuevamente.");
-        }
-    });
-</script>
-
 </html>
