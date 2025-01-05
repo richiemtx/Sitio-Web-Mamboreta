@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador Reseñas</title>
+    <link rel="icon" type="image/png" href="images/LogoMamboreta.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Panel de Administración de Reseñas Mamboretá</h2>
+        <p class="text-center">Bienvenido, aquí puedes gestionar las reseñas.</p>
+
+        <div id="reseñasList" class="mt-4">
+            
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBqyMAMByTX0b0bqvHu-o9IoJSG3voYjsw",
+            authDomain: "mambo-4f8ba.firebaseapp.com",
+            projectId: "mambo-4f8ba",
+            storageBucket: "mambo-4f8ba.appspot.com",
+            messagingSenderId: "326320108967",
+            appId: "1:326320108967:web:2076ef0192aebbc7657282"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const reseñasList = document.getElementById('reseñasList');
+
+        async function cargarReseñas() {
+            try {
+                const querySnapshot = await getDocs(collection(db, "reseñas"));
+                reseñasList.innerHTML = "";
+
+                querySnapshot.forEach((doc) => {
+                    const reseña = doc.data();
+                    const reseñaCard = document.createElement("div");
+                    reseñaCard.className = "card mb-3";
+                    reseñaCard.innerHTML = `
+                        <div class="card-body">
+                            <h5 class="card-title">${reseña.nombre} ${reseña.apellido}</h5>
+                            <p class="card-text">${reseña.comentarios}</p>
+                            <button class="btn btn-danger" data-id="${doc.id}">Eliminar</button>
+                        </div>`;
+                    reseñasList.appendChild(reseñaCard);
+                });
+
+                // Agregar evento a cada botón dinámicamente
+                document.querySelectorAll('.btn-danger').forEach(button => {
+                    button.addEventListener('click', async (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        confirmarEliminacion(id);
+                    });
+                });
+            } catch (error) {
+                console.error("Error al cargar reseñas: ", error);
+            }
+        }
+
+        async function eliminarReseña(id) {
+            try {
+                await deleteDoc(doc(db, "reseñas", id));
+                alert("Reseña eliminada");
+                cargarReseñas();
+            } catch (error) {
+                console.error("Error al eliminar reseña: ", error);
+            }
+        }
+
+        function confirmarEliminacion(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar esta reseña?")) {
+                eliminarReseña(id);
+            }
+        }
+
+        cargarReseñas();
+    </script>
+</body>
+</html>

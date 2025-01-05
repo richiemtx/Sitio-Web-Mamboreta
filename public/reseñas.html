@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas - Mamboretá Coffee</title>
+    <link rel="icon" type="image/png" href="images/LogoMamboreta.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="stylesReseñas.css">
+</head>
+
+<body>
+    <!-- Menú Principal -->
+    <header class="header">
+        <section class="presentacion">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Mamboretá Coffe</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="reservaciones.html">Reservaciones</a></li>
+                    <li><a href="reseñas.html">Reseñas</a></li>
+                </ul>
+            </nav>
+            <div class="presentacion-info container">
+                <img src="images/logo.png" alt="Logo">
+                <h2>Ayúdanos a mejorar</h2>
+                <div class="presentacion-txt">
+                    <!-- Sección: Presentación -->
+                    <div class="txt">
+                        <h4>¿Tienes alguna duda, sugerencia o comentario?</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+</body>
+
+<!-- Sección: Formulario Reseñas -->
+<section class="Formulario">
+    <form id="reseñasForm" class="text-center">
+        <div class="form-container">
+            <h2>Queremos escucharte</h2>
+            <h4>¿Alguna sugerencia para nuestra atención o servicio? ¡Haznos saber!</h4>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control rounded-input" placeholder="Ingresa tu nombre"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" class="form-control rounded-input"
+                    placeholder="Ingresa tu apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" class="form-control rounded-input" placeholder="Ingresa tu correo"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="opiniones">Comentarios</label>
+                <input type="text" id="comentarios" class="form-control rounded-input"
+                    placeholder="Escríbenos tu opinión" required>
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>
+</section>
+
+<!-- Sección: Mostrar Reseñas -->
+<section class="Reseñas container mt-5">
+    <h2 class="text-center">Reseñas de Nuestros Clientes</h2>
+    <div id="reseñasList" class="reseñas-list">
+        <!-- Aquí se mostrarán las reseñas dinámicamente -->
+    </div>
+</section>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBqyMAMByTX0b0bqvHu-o9IoJSG3voYjsw",
+        authDomain: "mambo-4f8ba.firebaseapp.com",
+        projectId: "mambo-4f8ba",
+        storageBucket: "mambo-4f8ba.appspot.com",
+        messagingSenderId: "326320108967",
+        appId: "1:326320108967:web:2076ef0192aebbc7657282"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const reseñasForm = document.getElementById('reseñasForm');
+    const reseñasList = document.getElementById('reseñasList');
+
+    // Manejar el envío del formulario
+    reseñasForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const correo = document.getElementById('correo').value;
+        const comentarios = document.getElementById('comentarios').value;
+
+        try {
+            const docRef = await addDoc(collection(db, "reseñas"), {
+                nombre: nombre,
+                apellido: apellido,
+                correo: correo,
+                comentarios: comentarios
+            });
+
+            console.log("Reseña agregada con ID: ", docRef.id);
+            alert("¡Gracias por tu reseña!");
+
+            // Limpiar los campos del formulario
+            document.getElementById('nombre').value = '';
+            document.getElementById('apellido').value = '';
+            document.getElementById('correo').value = '';
+            document.getElementById('comentarios').value = '';
+
+            // Recargar las reseñas
+            cargarReseñas();
+
+            // Redirigir al menú principal
+            window.location.href = 'index.html';
+        } catch (e) {
+            console.error("Error al agregar reseña: ", e);
+            alert("Hubo un error al enviar tu reseña. Intenta nuevamente.");
+        }
+    });
+
+    // Función para cargar las reseñas desde Firestore
+    const cargarReseñas = async () => {
+        try {
+            reseñasList.innerHTML = ""; // Limpiar la lista de reseñas
+            const q = query(collection(db, "reseñas"), orderBy("nombre", "asc"));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const reseña = doc.data();
+                const reseñaElement = document.createElement('div');
+                reseñaElement.className = "card mb-3";
+                reseñaElement.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${reseña.nombre} ${reseña.apellido}</h5>
+                        <p class="card-text">${reseña.comentarios}</p>
+                        <p class="card-text"><small class="text-muted">Correo: ${reseña.correo}</small></p>
+                    </div>
+                `;
+                reseñasList.appendChild(reseñaElement);
+            });
+        } catch (e) {
+            console.error("Error al cargar reseñas: ", e);
+        }
+    };
+
+    // Cargar las reseñas al cargar la página
+    cargarReseñas();
+</script>
+
+<!-- Footer -->
+<section class="horario">
+    <div class="horario-info container">
+        <div class="horario-txt">
+            <!-- Sección: Dirección -->
+            <div class="txt">
+                <h4>Dirección</h4>
+                <p>
+                    C. Aquiles Serdan 1225, Madrazo
+                </p>
+                <p>
+                    34075 Durango, Dgo.
+                </p>
+            </div>
+            <!-- Sección: Horario -->
+            <div class="txt">
+                <h4>Horario</h4>
+                <p>
+                    Lunes a Domingo: 8:30 am - 10:00 pm
+                </p>
+            </div>
+            <!-- Sección: Contácto -->
+            <div class="txt">
+                <h4>Teléfono</h4>
+                <p>
+                    +52 (618) 518 09 79
+                </p>
+            </div>
+            <!-- Sección: Redes sociales -->
+            <section class="mb-4">
+                <div class="txt">
+                    <h4>Redes Sociales</h4>
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1 facebook"
+                        href="https://www.facebook.com/MamboretaCoffee/?locale=es_LA" target="_blank" role="button">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1 instagram"
+                        href="https://www.instagram.com/mamboretacoffee/?hl=es" target="_blank" role="button">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="footer-content container">
+            <!-- Texto de invitación -->
+            <h4> </h4>
+            <!-- Copyright -->
+            <p>© 2024 Mamboretá. Coffee, brunch & dinner</p>
+        </div>
+    </div>
+</section>
+</html>

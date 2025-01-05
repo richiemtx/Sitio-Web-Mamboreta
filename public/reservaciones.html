@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones - Mamboretá Coffee</title>
+    <link rel="icon" type="image/png" href="images/LogoMamboreta.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="stylesReserv.css">
+</head>
+
+<body>
+    <!-- Menú Principal -->
+    <header class="header">
+        <section class="presentacion">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Mamboretá Coffe</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="reservaciones.html">Reservaciones</a></li>
+                    <li><a href="reseñas.html">Reseñas</a></li>
+                </ul>
+            </nav>
+            <div class="presentacion-info container">
+                <img src="images/logo.png" alt="Logo">
+                <h2>Reservaciones</h2>
+                <div class="presentacion-txt">
+                    <!-- Sección: Presentación -->
+                    <div class="txt">
+                        <h4>¡Asegura tu lugar y vive una experiencia única con nosotros!</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Formulario de reservaciones -->
+    <section class="reservaciones container">
+        <form id="reservationForm" class="text-center">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="form-control rounded-input" placeholder="Ingresa tu nombre"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" class="form-control rounded-input" placeholder="Ingresa tu correo"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono</label>
+                <input type="tel" id="telefono" class="form-control rounded-input" placeholder="Ingresa tu teléfono"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="personas">Número de Personas</label>
+                <input type="number" id="personas" class="form-control rounded-input" placeholder="Cantidad de personas"
+                    min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha y Hora</label>
+                <input type="datetime-local" id="fecha" class="form-control rounded-input" 
+                    min="2024-12-12T08:30" max="2025-02-28T22:00" required>
+            </div>
+            <button type="submit" class="btn btn-success">Reservar</button>
+        </form>
+    </section>
+    <script type="module" src="firebase.js"></script>
+</body>
+
+<!-- Footer -->
+<section class="horario">
+    <div class="horario-info container">
+        <div class="horario-txt">
+            <!-- Sección: Dirección -->
+            <div class="txt">
+                <h4>Dirección</h4>
+                <p>
+                    C. Aquiles Serdan 1225, Madrazo
+                </p>
+                <p>
+                    34075 Durango, Dgo.
+                </p>
+            </div>
+            <!-- Sección: Horario -->
+            <div class="txt">
+                <h4>Horario</h4>
+                <p>
+                    Lunes a Domingo: 8:30 am - 10:00 pm
+                </p>
+            </div>
+            <!-- Sección: Contácto -->
+            <div class="txt">
+                <h4>Teléfono</h4>
+                <p>
+                    +52 (618) 518 09 79
+                </p>
+            </div>
+            <!-- Sección: Redes sociales -->
+            <section class="mb-4">
+                <div class="txt">
+                    <h4>Redes Sociales</h4>
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1 facebook"
+                        href="https://www.facebook.com/MamboretaCoffee/?locale=es_LA" target="_blank" role="button">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1 instagram"
+                        href="https://www.instagram.com/mamboretacoffee/?hl=es" target="_blank" role="button">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="footer-content container">
+            <!-- Texto de invitación -->
+            <h4>Realiza tu reservación de manera sencilla para garantizar tu mesa en la fecha y hora que prefieras.
+                Estamos listos para brindarte el mejor servicio. ¡Te esperamos!</h4>
+            <!-- Copyright -->
+            <p>© 2024 Mamboretá. Coffee, brunch & dinner</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cargar Firebase a través del CDN -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBqyMAMByTX0b0bqvHu-o9IoJSG3voYjsw",
+        authDomain: "mambo-4f8ba.firebaseapp.com",
+        projectId: "mambo-4f8ba",
+        storageBucket: "mambo-4f8ba.appspot.com",
+        messagingSenderId: "326320108967",
+        appId: "1:326320108967:web:2076ef0192aebbc7657282"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const reservationForm = document.getElementById('reservationForm');
+
+    reservationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const correo = document.getElementById('correo').value;
+        const telefono = document.getElementById('telefono').value;
+        const personas = document.getElementById('personas').value;
+        const fechaHora = document.getElementById('fecha').value;
+
+        try {
+            // Agregar la reservación a Firestore
+            const docRef = await addDoc(collection(db, "reservaciones"), {
+                nombre: nombre,
+                correo: correo,
+                telefono: telefono,
+                personas: Number(personas),
+                fecha: fechaHora
+            });
+
+            console.log("Reservación agregada con ID: ", docRef.id);
+            alert("¡Reservación exitosa!");
+            reservationForm.reset();
+        } catch (e) {
+            console.error("Error al agregar reservación: ", e);
+            alert("Hubo un error al realizar la reservación. Intenta nuevamente.");
+        }
+
+        // Redirigir al menú principal
+        window.location.href = 'index.html';
+    });
+</script>
+</script>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamboretá Coffee</title>
+    <link rel="icon" type="image/png" href="images/LogoMamboreta.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesIndex.css"> 
+</head>
+
+<body>
+    <!-- Menú Principal -->
+    <header class="header">
+        <section class="presentacion">
+            <nav class="navbar">
+                <button class="login-button" onclick="window.open('login.html', '_blank')">Iniciar Sesión</button>
+                <ul>
+                    <li><a href="index.html">Mamboretá Coffee</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="reservaciones.html">Reservaciones</a></li>
+                    <li><a href="reseñas.html">Reseñas</a></li>
+                </ul>
+            </nav>
+            <div class="presentacion-info container">
+                <img src="images/logo.png" alt="Logo">
+                <h2>Mamboretá Coffee</h2>
+                <div class="presentacion-txt">
+                    <!-- Sección: Presentación -->
+                    <div class="txt">
+                        <h4>¡Gracias por visitarnos, y 
+                            esperamos verte pronto en Mamboretá!
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Carrusel-->
+    <div class="container mt-5">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/FrutosRojos.jpg" class="d-block w-100" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Lavanda.jpg" class="d-block w-100" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Panambi.jpg" class="d-block w-100" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Presentación Platillos -->
+    <section class="mambo">
+        <img class="mambo-img" src="images/" alt="">
+        <div class="mambo-content container">
+            <h2>Especialidades de la Casa</h2>
+            <p class="txt-p">
+                Descubre nuestras especialidades, desde ricos desayunos
+                hasta nuestras recetas exclusivas que han conquistado a 
+                cada visitante. Cada bocado está pensado para brindarte una 
+                experiencia única.
+                ¡Ven y disfruta del auténtico sabor de Mamboretá!
+            </p>
+            <div class="mambo-group">
+                <div class="mambo-1">
+                    <img src="images/ChilaquilesBarbacoa.jpg">
+                    <h3>Chilaquiles Barbacoa</h3>
+                    <p>
+                        Disfruta de la combinación perfecta entre lo tradicional 
+                        y lo exquisito con nuestros chilaquiles con barbacoa. 
+                    </p>
+                </div>
+                <div class="mambo-1">
+                    <img src="images/SliderChipotudla.jpg">
+                    <h3>Slider Chipotudla</h3>
+                    <p>
+                        Déjate sorprender por nuestra Slider Chipotluda, 
+                        una mini hamburguesa preparada con carne jugosa a la parrilla.
+                    </p>
+                </div>
+                <div class="mambo-1">
+                    <img src="images/ChapataJamonPavo.jpg">
+                    <h3>Chapata Jamon Pavo</h3>
+                    <p>
+                        Un pan chapata suave y crujiente, relleno con jamón de pavo
+                        de la más alta calidad, queso fresco, hojas de lechuga crujiente.
+                    </p>
+                </div>
+            </div>
+            <a href="menu.html" class="btn-1">Menú</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <main class="services">
+        <div class="services-content container">
+            <h2>Reservaciones Mamboretá</h2>
+            <div class="services-group"></div>
+            <p>
+                Asegura tu lugar en nuestra mesa y disfruta de una experiencia 
+                gastronómica inolvidable. Ya sea para una cena especial, un 
+                almuerzo en familia o una reunión con amigos, en Mamboretá 
+                estamos listos para recibirte.                                
+                Reserva con anticipación para garantizar el mejor servicio y la 
+                disponibilidad de tu mesa. Nuestro equipo estará encantado de 
+                ayudarte a planear el momento perfecto.
+            </p>
+            <a href="reservaciones.html" class="btn-1">Reservar ahora</a>
+        </div>
+    </main>
+
+    <!-- General -->
+    <section class="general">
+        <div class="general-1">
+            <h2>Nuestros Chilaquiles</h2>
+            <p>
+                Descubre el placer de nuestros chilaquiles, una explosión de sabores 
+                en cada bocado. Desde los tradicionales chilaquiles rojos o verdes,
+                hasta nuestras versiones especiales como los chilaquiles con arrachera
+                o pollo, cada plato está preparado al momento con ingredientes
+                frescos y de la mejor calidad.
+            </p>
+            <a href="menu.html" class="btn-1">Menú</a>
+        </div>
+        <div class="general-2">
+            <video autoplay muted loop playsinline>
+                <source src="videos/Chilaquiles.mp4" type="video/mp4">
+                Tu navegador no soporta videos en formato MP4.
+            </video>
+        </div>
+    </section>
+    <section class="general">
+        <div class="general-3">
+            <video autoplay muted loop playsinline>
+                <source src="videos/Bebidas.mp4" type="video/mp4">
+                Tu navegador no soporta videos en formato MP4.
+            </video>
+        </div>
+        <div class="general-1">
+            <h2>Conoce Mamboretá</h2>
+            <p>
+                Descubre el rincón acogedor y lleno de sabor de nuestra cafetería en 
+                Mamboretá. Un espacio diseñado para que disfrutes de la tranquilidad 
+                mientras saboreas una selección de cafés especiales, tés y repostería 
+                hecha en casa. El ambiente cálido y relajado de nuestra cafetería hace 
+                de cada visita una experiencia única, perfecta para una charla íntima 
+                o una pausa durante el día.
+            </p>
+            <a href="menu.html" class="btn-1">Mamboretá Coffee</a>
+        </div>
+    </section>
+
+    <!-- Horario-->
+    <section class="horario">
+        <div class="horario-info container">
+            <h2>Horario</h2>
+            <div class="horario-txt">
+                <!-- Sección: Dirección -->
+                <div class="txt">
+                    <h4>Dirección</h4>
+                    <p>
+                        C. Aquiles Serdan 1225, Madrazo
+                    </p>
+                    <p>
+                        34075 Durango, Dgo.
+                    </p>
+                </div>
+                <!-- Sección: Horario -->
+                <div class="txt">
+                    <h4>Horario</h4>
+                    <p>
+                        Lunes a Domingo: 8:30 am - 10:00 pm
+                    </p>
+                </div>
+                <!-- Sección: Contácto -->
+                <div class="txt">
+                    <h4>Teléfono</h4>
+                    <p>
+                        +52 (618) 518 09 79
+                    </p>
+                </div>
+                <!-- Sección: Redes sociales -->
+                <section class="mb-4">
+                    <div class="txt">
+                        <h4>Redes Sociales</h4>
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1 facebook"
+                            href="https://www.facebook.com/MamboretaCoffee/?locale=es_LA" target="_blank" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1 instagram"
+                            href="https://www.instagram.com/mamboretacoffee/?hl=es" target="_blank" role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- Mapa -->
+        <section>
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.123591966452!2d-104.67982982446325!3d24.026706478112303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bc9fe362e5f29%3A0x49ad31a93f022c6a!2sMamboret%C3%A1%20Coffee!5e0!3m2!1ses!2smx!4v1731187621157!5m2!1ses!2smx"
+                width="100%" height="750" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Flecha hacia arriba -->
+        <a class="btn btn-outline-light btn-floating m-1 arrow-up" href="#top" role="button">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        <div class="footer-content container">
+            <p>© 2024 Mamboretá. Coffee, brunch & dinner</p>
+        </div>
+    </footer>
+    </script>
+</body>
+
+<style>
+    
+.navbar {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+}
+
+.login-button {
+    position: absolute !important;
+    right: 20px;
+    background-color: #c7967b !important; 
+    color: white !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+}
+
+.login-button:hover {
+    background-color: #a76d54 !important;
+    color: #000000 !important;
+}
+
+.navbar ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    gap: 15px !important;
+}
+
+.navbar ul li a {
+    text-decoration: none !important;   
+}
+
+.btn-1 {
+    text-decoration: none;
+}
+
+.login-button:hover {
+    text-decoration: none;
+}
+
+/* Botón iniciar sesión */
+@media (max-width: 768px), (max-width: 480px) {
+    .navbar {
+        flex-direction: column !important;
+    }
+
+    .login-button {
+        position: static !important;
+        margin: 10px auto !important;
+    }
+}
+</style>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrador</title>
+    <link rel="icon" type="image/png" href="images/LogoMamboreta.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Inicio de Sesión Mamboretá - Administrador</h2>
+        <form id="loginForm" class="mt-4">
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" class="form-control" placeholder="Ingresa tu correo" required>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" class="form-control" placeholder="Ingresa tu contraseña"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBqyMAMByTX0b0bqvHu-o9IoJSG3voYjsw",
+            authDomain: "mambo-4f8ba.firebaseapp.com",
+            projectId: "mambo-4f8ba",
+            storageBucket: "mambo-4f8ba.appspot.com",
+            messagingSenderId: "326320108967",
+            appId: "1:326320108967:web:2076ef0192aebbc7657282"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const correoInput = document.getElementById('correo');
+            const contraseñaInput = document.getElementById('contraseña');
+            const correo = correoInput.value;
+            const contraseña = contraseñaInput.value;
+
+            try {
+                const q = query(collection(db, "usuarios"), where("correo", "==", correo), where("rol", "==", "administrador"));
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    const admin = querySnapshot.docs[0].data();
+                    if (contraseña === admin.contraseña) {
+                        alert("Inicio de sesión exitoso");
+                        correoInput.value = ""; // Limpiar campo de correo
+                        contraseñaInput.value = ""; // Limpiar campo de contraseña
+                        window.location.href = "cms-dashboard.html";
+                    } else {
+                        alert("Contraseña incorrecta");
+                        correoInput.value = ""; // Limpiar campo de correo
+                        contraseñaInput.value = ""; // Limpiar campo de contraseña
+                    }
+                } else {
+                    alert("No tienes permisos de administrador");
+                    correoInput.value = ""; // Limpiar campo de correo
+                    contraseñaInput.value = ""; // Limpiar campo de contraseña
+                }
+            } catch (error) {
+                console.error("Error al iniciar sesión: ", error);
+                alert("Error al iniciar sesión");
+                correoInput.value = ""; // Limpiar campo de correo
+                contraseñaInput.value = ""; // Limpiar campo de contraseña
+            }
+        });
+    </script>
+</body>
+</html>

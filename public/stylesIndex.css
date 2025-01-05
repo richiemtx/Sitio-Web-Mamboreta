@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400,500,600,700,800&display=swap');
+/* Importa la fuente "Poppins" desde Google Fonts, con distintos grosores. */
+
+/* Estilos Menú */
+* {
+    margin: 0; /* Elimina márgenes predeterminados. */
+    padding: 0; /* Elimina rellenos predeterminados. */
+    box-sizing: border-box; /* Incluye bordes y padding dentro del tamaño total. */
+    text-decoration: none; /* Quita la decoración de texto, como subrayados en enlaces. */
+    list-style: none; /* Elimina los estilos de lista predeterminados. */
+}
+
+/* Para mover la imagen y el título hacia abajo */
+.presentacion-info img {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente 'Poppins' como principal y, si no está disponible, usa cualquier fuente sans-serif */
+    background-color: #e1e2e6;
+    margin: 0;
+    padding: 0;
+}
+
+.presentacion-info h2 {
+    margin-top: 20px; /* Ajusta este valor según sea necesario */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+    background-color: #000; /* Asegurar que el fondo del menú sea visible */
+    padding: 10px 0; /* Espaciado vertical */
+    margin-top: -90px; /* Mueve el menú hacia arriba */
+}
+
+.navbar ul {
+    display: flex; /* Usar flexbox para manejar la distribución de los elementos */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 0; /* Remover padding por defecto de los ul */
+}
+
+.navbar ul li {
+    position: relative; /* Posición relativa para submenús o efectos. */
+}
+
+.navbar ul li a {
+    font-size: 18px; /* Tamaño de fuente de los enlaces del menú. */
+    padding: 10px; /* Espaciado interno de los enlaces. */
+    color: #fffdfc; /* Color blanco para los enlaces. */
+    display: block; /* Hace que los enlaces ocupen todo el ancho disponible. */
+    font-weight: 600; /* Define un grosor medio del texto. */
+}
+
+.navbar ul li a:hover {
+    color: #ce967b; /* Cambia el color del texto al pasar el cursor. */
+    text-decoration: none; /* Elimina la subrayado al pasar el cursor. */
+}
+
+.presentacion-info img {
+    max-width: 200px;
+    margin-bottom: -30px;
+    margin-top: -20px;
+    float: right;
+    margin-left: 20px;
+}
+
+.presentacion {
+    padding: 100px 0px; /* Agrega un relleno de 100px en la parte superior e inferior, y 0px en los lados */
+    background-color: #000000; /* Establece el color de fondo como negro (#000000) */
+}
+
+.presentacion-info h2 {
+    font-size: 55px; /* Establece el tamaño de la fuente en 55px */
+    line-height: 70px; /* Define el interlineado en 70px */
+    color: #ffffff; /* Establece el color del texto en blanco (#ffffff) */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px */
+}
+
+.presentacion-txt {
+    display: flex; /* Usa el modelo de caja flexible (Flexbox) */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos de manera uniforme */
+}
+
+.txt h4 {
+    font-size: 18px; /* Establece el tamaño de la fuente en 18px */
+    color: #a7a7a7; /* Define el color del texto en gris claro (#a7a7a7) */
+    margin-bottom: 0px; /* Añade un margen inferior de 30px */
+}
+
+.btn-1 {
+    display: inline-block; /* Permite agregar márgenes sin romper el flujo. */
+    padding: 11px 35px; /* Espaciado interno del botón. */
+    background-color: #ce967b; /* Color de fondo del botón. */
+    color: #f9fafc; /* Color del texto del botón. */
+    text-transform: uppercase; /* Convierte el texto del botón a mayúsculas. */
+    border-radius: 8px; /* Bordes redondeados del botón. */
+    text-decoration: none;
+}
+
+.btn-1:hover {
+    background-color: #a76d54; /* Cambia ligeramente el color al pasar el cursor. */
+    color: #000000; /* Cambia el color del texto al negro al pasar el cursor. */
+    text-decoration: none; /* Elimina subrayados al pasar el cursor. */
+}
+
+.mambo {
+    padding: 100px 0; /* Define un espaciado interno de 100px en la parte superior e inferior. */
+    background-color: #e1e2e6; /* Aplica un color de fondo gris claro. */
+    position: relative; /* Permite posicionar elementos hijos de forma relativa al contenedor. */
+}
+
+.mambo-content {
+    text-align: center; /* Centra horizontalmente el texto contenido. */
+}
+
+.mambo-content h2 {
+    font-size: 55px; /* Establece un tamaño de fuente grande para el título. */
+    line-height: 70px; /* Ajusta la altura de línea para mantener un espaciado proporcional. */
+    color: #323337; /* Aplica un color gris oscuro al texto del título. */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas. */
+    padding: 0 250px; /* Aplica un espaciado interno lateral de 250px. */
+    margin-bottom: 15px; /* Añade un espacio de 15px debajo del título. */
+}
+
+.txt-p {
+    font-size: 16px; /* Tamaño de fuente estándar para el texto descriptivo. */
+    color: #414247; /* Color gris medio para el texto. */
+    padding: 0 250px; /* Aplica un espaciado interno lateral de 250px. */
+    margin-bottom: 35px; /* Añade un espacio de 35px debajo del párrafo. */
+}
+
+.mambo-group {
+    display: flex; /* Activa flexbox para alinear elementos en línea o columna. */
+    justify-content: space-between; /* Distribuye los elementos hijos con espacio entre ellos. */
+    margin-bottom: 50px; /* Agrega un margen inferior de 50px para separación. */
+}
+
+.mambo-1 {
+    padding: 0 25px; /* Aplica un espaciado interno lateral de 25px. */
+}
+
+.mambo-1 img {
+    width: 200px; /* Establece el ancho de las imágenes a 200px. */
+}
+
+.mambo-img {
+    position: absolute; /* Posiciona el elemento de forma absoluta dentro de su contenedor. */
+    top: 0; /* Coloca el elemento en la parte superior del contenedor. */
+    right: 0; /* Coloca el elemento en el lado derecho del contenedor. */
+}
+
+.mambo-1 h3 {
+    color: #000000; /* Aplica un color gris oscuro al texto del encabezado. */
+    font-size: 25px; /* Define el tamaño de fuente para el encabezado. */
+    margin-bottom: -5px; /* Añade un margen inferior de 15px debajo del encabezado. */
+    margin-top: 10px;
+}
+
+.services {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7), /* Capa superior negra con transparencia del 70%. */
+        rgba(0, 0, 0, 0.7)), /* Capa inferior negra con transparencia del 70%. */
+        url(images/mambonoche.jpg); /* Imagen de fondo con una hamburguesa. */
+    background-position: center center; /* Centra la imagen de fondo. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    background-size: cover; /* Escala la imagen para cubrir todo el contenedor. */
+    background-attachment: fixed; /* Fija la imagen de fondo durante el desplazamiento. */
+    padding: 100px 0; /* Aplica un espaciado interno de 100px arriba y abajo. */
+}
+
+.services-content {
+    text-align: center; /* Centra horizontalmente el contenido de texto. */
+}
+
+.services-content h2 {
+    font-size: 55px; /* Define un tamaño de fuente grande para el encabezado. */
+    line-height: 70px; /* Establece un interlineado adecuado para el encabezado. */
+    color: #f9fafc; /* Aplica un color blanco casi puro al texto del encabezado. */
+    text-transform: uppercase; /* Convierte todo el texto del encabezado a mayúsculas. */
+    margin-bottom: 50px; /* Añade un margen inferior de 50px debajo del encabezado. */
+}
+
+.services-content p {
+    font-size: 16px; /* Define un tamaño de fuente estándar para el párrafo. */
+    color: #c5c5c5; /* Aplica un color gris claro al texto del párrafo. */
+    margin-bottom: 50px; /* Añade un margen inferior de 50px debajo del párrafo. */
+    padding: 0 100px; /* Aplica un relleno de 100px a los lados del párrafo. */
+}
+
+.services-group {
+    display: flex; /* Utiliza un contenedor flexible para alinear los elementos hijos. */
+    justify-content: space-between; /* Distribuye uniformemente los elementos con espacio entre ellos. */
+    margin-bottom: 50px; /* Añade un margen inferior de 50px debajo del grupo de servicios. */
+}
+
+.services-1 {
+    padding: 0 100px; /* Aplica un relleno de 100px a los lados de cada servicio. */
+}
+
+.general {
+    display: flex; /* Define un contenedor flexible para alinear los elementos horizontalmente. */
+}
+
+.general-1 {
+    width: 50%; /* Ocupa el 50% del ancho del contenedor principal. */
+    padding: 100px 250px 100px 100px; /* Aplica relleno en todas las direcciones. */
+    background-color: #e1e2e6; /* Establece un fondo gris claro para esta sección. */
+}
+
+.general-2, .general-3 {
+    position: relative; /* Asegura que el contenedor se posicione adecuadamente */
+    width: 50%;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    overflow: hidden; /* Evita que el video se salga del contenedor */
+}
+
+.general-2 video, .general-3 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el video */
+    width: 100%; /* Asegura que el video cubra todo el contenedor */
+    height: 100%; /* Asegura que el video cubra todo el contenedor */
+    object-fit: cover; /* Ajusta el video para cubrir el área */
+    z-index: -1; /* Coloca el video detrás de cualquier contenido */
+}
+
+h2 {
+    font-size: 55px; /* Define un tamaño de fuente grande para los encabezados h2. */
+    line-height: 70px; /* Establece un interlineado adecuado para los encabezados. */
+    color: #323337; /* Aplica un color gris oscuro al texto del encabezado. */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del encabezado. */
+}
+
+p {
+    font-size: 16px; /* Define un tamaño de fuente estándar para los párrafos. */
+    color: #414247; /* Aplica un color gris oscuro al texto. */
+    margin: 25px 0 45px 0; /* Establece márgenes superior, inferior e izquierdo/derecho. */
+}
+
+.horario {
+    padding: 100px 0px; /* Aplica un relleno superior e inferior de 100px. */
+    background-color: #000000; /* Establece un fondo negro para esta sección. */
+}
+
+.horario-info h2 {
+    font-size: 55px; /* Define un tamaño de fuente grande para los encabezados h2 de esta sección. */
+    line-height: 70px; /* Establece un interlineado adecuado. */
+    color: #ffffff; /* Aplica un color blanco al texto del encabezado. */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas. */
+    margin-bottom: 20px; /* Añade un margen inferior de 20px debajo del encabezado. */
+}
+
+.horario-txt {
+    display: flex; /* Define un contenedor flexible para alinear los elementos hijos horizontalmente. */
+    justify-content: space-between; /* Distribuye uniformemente los elementos con espacio entre ellos. */
+}
+
+.txt {
+    color: #ffffff; /* Aplica un color blanco al texto dentro de esta clase. */
+}
+
+.txt h4 {
+    font-size: 18px; /* Define un tamaño de fuente estándar para los encabezados h4. */
+    color: #a7a7a7; /* Aplica un color gris claro al texto. */
+    margin-bottom: 30px; /* Añade un margen inferior de 30px debajo del encabezado. */
+}
+
+.txt p {
+    font-size: 18px; /* Define un tamaño de fuente estándar para los párrafos. */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas. */
+    font-weight: 600; /* Establece un peso de fuente audaz. */
+    margin-bottom: 15px; /* Añade un margen inferior de 15px debajo del párrafo. */
+}
+
+.map {
+    padding: 100px 0px; /* Agrega un espaciado superior e inferior de 100px. */
+    filter: grayscale(100%) invert(92%) contrast(93%); /* Aplica efectos visuales a los elementos dentro de esta clase. */
+    margin-bottom: -150px;
+}
+
+.footer {
+    background-color: #000000; /* Establece un fondo negro para el pie de página. */
+    padding: 30px 50px; /* Agrega espacio superior, inferior, izquierdo y derecho. */
+    text-align: center; /* Centra horizontalmente el texto y los elementos dentro de esta clase. */
+}
+
+.footer-content p {
+    color: white; /* Establece un color blanco para el texto. */
+    margin: 0; /* Elimina los márgenes predeterminados del párrafo. */
+    margin-top: 30px;
+    font-size: 16px; /* Ajusta el tamaño del texto a 16px. */
+}
+
+.arrow-up {
+    margin-top: -700px; /* Ajusta este valor según lo necesario */
+}
+
+/* Diseño responsivo */
+/* Para pantallas pequeñas (tablets y teléfonos móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Cambia el menú a una columna */
+        padding: 15px 0;
+        margin-top: 0; /* Ajusta la posición en pantallas pequeñas */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambia la distribución de los elementos a una columna */
+        gap: 10px; /* Espaciado más pequeño entre los enlaces */
+    }
+
+    .navbar ul li a {
+        font-size: 16px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: center; /* Centra los textos */
+    }
+}
+
+/* Para pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 14px; /* Ajusta el tamaño de la fuente aún más */
+        padding: 8px; /* Reduce el padding para un mejor ajuste */
+    }
+}
+
+/* Tablets y pantallas medianas (max-width: 768px) */
+@media (max-width: 768px) {
+    .presentacion {
+        padding: 50px 20px; /* Reduce el padding */
+    }
+
+    .presentacion-info h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 40px; /* Reduce el tamaño del encabezado */
+        line-height: 50px;
+    }
+
+    .presentacion-info img {
+        max-width: 150px; /* Reduce el tamaño de la imagen */
+        margin: 10px auto; /* Centra la imagen */
+        float: none; /* Elimina el flotado */
+        display: block;
+    }
+
+    .presentacion-txt {
+        text-align: center; /* Centra el texto horizontalmente. */
+        flex-direction: column; /* Cambia a una columna */
+        gap: 20px; /* Añade espacio entre elementos */
+    }
+
+    .barra {
+        font-size: 25px; /* Reduce el tamaño de fuente */
+    }
+}
+
+/* Teléfonos móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    .presentacion {
+        padding: 30px 10px; /* Reduce aún más el padding */
+    }
+
+    .presentacion-info h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 30px; /* Reduce aún más el tamaño del encabezado */
+        line-height: 40px;
+    }
+
+    .presentacion-info img {
+        max-width: 120px; /* Ajusta el tamaño de la imagen */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    .barra {
+        font-size: 20px; /* Reduce el tamaño de fuente */
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .txt h4,
+    .txt p {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px; /* Añade espacio interno para pantallas más pequeñas. */
+    }
+
+    .btn-1 {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        min-height: 60vh; /* Reduce la altura de la cabecera. */
+    }
+
+    .header img {
+        left: -50px; /* Ajusta la posición del logo. */
+        top: 30px; /* Ajusta verticalmente el logo. */
+        max-width: 120px; /* Reduce el tamaño del logo. */
+    }
+
+    .menu {
+        flex-wrap: wrap; /* Permite que los elementos se distribuyan en varias líneas. */
+        padding: 10px; /* Añade espacio interno para una mejor visualización. */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        min-height: 50vh; /* Reduce aún más la altura de la cabecera. */
+        background-position: center; /* Ajusta la posición de la imagen de fondo. */
+    }
+
+    .menu {
+        flex-direction: column; /* Cambia a un diseño vertical. */
+    }
+
+    .menu li {
+        margin: 5px 0; /* Añade margen entre los elementos del menú. */
+    }
+}
+
+@media (max-width: 576px) {
+    .header img {
+        left: 10px; /* Ajusta la posición horizontal del logo. */
+        top: 20px; /* Ajusta la posición vertical del logo. */
+        max-width: 100px; /* Reduce más el tamaño del logo. */
+    }
+
+    .menu {
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente del menú. */
+    }
+
+    .container {
+        max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible. */
+    }
+}
+
+@media (max-width: 992px) {
+    .header-content h1 {
+        font-size: 55px; /* Reduce el tamaño del título. */
+        line-height: 60px; /* Ajusta la altura de línea. */
+    }
+
+    .header-content p {
+        padding: 0 50px; /* Reduce el espaciado lateral. */
+    }
+
+    .mambo-content h2 {
+        text-align: center;
+        font-size: 40px; /* Reduce el tamaño del texto. */
+        line-height: 50px; /* Ajusta la altura de línea. */
+        padding: 0 100px; /* Reduce el espaciado interno lateral. */
+    }
+
+    .txt-p {
+        padding: 0 50px; /* Reduce el espaciado interno lateral. */
+        text-align: center;
+    }
+
+    .mambo-group {
+        flex-direction: column; /* Cambia la disposición a vertical. */
+        align-items: center; /* Centra los elementos. */
+    }
+
+    .mambo-1 {
+        margin-bottom: 30px; /* Añade separación entre elementos. */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu .navbar ul li {
+        float: none; /* Cambia los elementos del menú a disposición vertical. */
+        text-align: center; /* Centra los elementos. */
+    }
+
+    .btn-1 {
+        align-items: center;
+        padding: 10px 25px; /* Ajusta el tamaño del botón. */
+        font-size: 14px; /* Reduce el tamaño de la fuente. */
+    }
+
+    .header-content p {
+        font-size: 14px; /* Reduce el tamaño del texto. */
+    }
+
+    .mambo-group {
+        margin-bottom: 20px; /* Reduce la separación entre grupos. */
+    }
+
+    .mambo-1 img {
+        width: 150px; /* Reduce el tamaño de las imágenes. */
+    }
+}
+
+@media (max-width: 576px) {
+    .header-content h1 {
+        font-size: 40px; /* Reduce aún más el tamaño del título. */
+        line-height: 50px; /* Ajusta la altura de línea. */
+    }
+
+    .header-content p {
+        padding: 0 20px; /* Reduce el espaciado lateral. */
+    }
+
+    .mambo-content h2 {
+        font-size: 30px; /* Reduce el tamaño del texto del título. */
+        line-height: 40px; /* Ajusta la altura de línea. */
+        padding: 0 20px; /* Reduce aún más el espaciado interno lateral. */
+    }
+
+    .txt-p {
+        font-size: 14px; /* Reduce el tamaño de fuente. */
+        padding: 0 20px; /* Reduce el espaciado interno lateral. */
+    }
+
+    .menu label {
+        display: block; /* Muestra el ícono del menú hamburguesa. */
+    }
+
+    .menu .navbar {
+        display: none; /* Oculta el menú principal inicialmente. */
+    }
+
+    #menu:checked ~ .navbar {
+        display: block; /* Muestra el menú cuando está seleccionado. */
+    }
+}
+
+@media (max-width: 992px) {
+    .services-content h2 {
+        font-size: 40px; /* Reduce el tamaño del encabezado. */
+        line-height: 50px; /* Ajusta la altura de línea. */
+    }
+
+    .services-content p {
+        padding: 0 50px; /* Reduce el relleno lateral. */
+    }
+
+    .services-group {
+        flex-direction: column; /* Cambia la disposición a columna. */
+        align-items: center; /* Centra los elementos. */
+    }
+
+    .services-1 {
+        padding: 0 50px; /* Reduce el relleno lateral. */
+        margin-bottom: 20px; /* Añade un margen inferior para separación. */
+    }
+}
+
+/* Estilos Responsivos para la sección .general */
+@media (max-width: 992px) {
+    .general {
+        align-items: center;
+        flex-direction: column; /* Cambia la disposición a columna. */
+    }
+
+    .general-1 {
+        align-items: center;
+        padding: 50px 50px; /* Ajusta el relleno interno. */
+        width: 100%; /* Asegura que ocupe todo el ancho. */
+    }
+
+    .general-2, .general-3 {
+        align-items: center;
+        width: 100%; /* Asegura que cada video ocupe todo el ancho. */
+        height: 50vh; /* Reduce la altura del video para pantallas medianas. */
+    }
+
+    .general p {
+        text-align: center;
+    }
+
+    .general .btn-1 {
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-content h2 {
+        font-size: 30px; /* Reduce aún más el tamaño del encabezado. */
+        line-height: 40px; /* Ajusta la altura de línea. */
+    }
+
+    .services-content p {
+        padding: 0 20px; /* Reduce aún más el relleno lateral. */
+    }
+
+    .general-2, .general-3 {
+        height: 40vh; /* Reduce la altura del video para pantallas pequeñas. */
+    }
+
+    h2 {
+        text-align: center; /* Centra el texto horizontalmente. */
+        font-size: 28px; /* Ajusta el tamaño de los encabezados h2. */
+        line-height: 36px; /* Ajusta la altura de línea. */
+    }
+
+    p {
+        font-size: 14px; /* Ajusta el tamaño del texto en párrafos. */
+    }
+}
+
+/* Ajustes generales para dispositivos muy pequeños */
+@media (max-width: 360px) {
+    .services-content h2 {
+        font-size: 24px;
+    }
+
+    .services-content p {
+        font-size: 12px;
+    }
+
+    .general-1 {
+        padding: 20px; /* Reduce el relleno para maximizar espacio. */
+    }
+}
+
+@media (max-width: 992px) {
+    .horario {
+        padding: 50px 20px; /* Reduce el relleno para pantallas medianas. */
+    }
+
+    .horario-info h2 {
+        font-size: 40px; /* Reduce el tamaño del encabezado. */
+        line-height: 50px; /* Ajusta la altura de línea. */
+    }
+
+    .horario-txt {
+        flex-direction: column; /* Cambia la disposición de horizontal a vertical. */
+        align-items: center; /* Centra los elementos. */
+        text-align: center; /* Centra el texto para mejor visibilidad. */
+    }
+
+    .txt {
+        margin-bottom: 30px; /* Añade separación entre las secciones. */
+    }
+
+    .txt p {
+        font-size: 16px; /* Ajusta el tamaño del texto para pantallas medianas. */
+    }
+}
+
+/* Estilos Responsivos para .map */
+@media (max-width: 768px) {
+    .map {
+        margin-bottom: 0; /* Elimina el margen negativo en pantallas pequeñas. */
+        filter: grayscale(100%) invert(92%) contrast(93%); 
+    }
+}
+
+/* Estilos Responsivos para .footer */
+@media (max-width: 576px) {
+    .footer {
+        padding: 20px; /* Reduce el relleno para pantallas muy pequeñas. */
+    }
+
+    .footer-content p {
+        font-size: 14px; /* Reduce el tamaño del texto para mayor legibilidad. */
+    }
+}
+
+/* Ajuste para .arrow-up */
+@media (max-width: 768px) {
+    .arrow-up {
+        margin-top: -100px; /* Reduce el valor negativo para evitar solapamientos. */
+    }
+}

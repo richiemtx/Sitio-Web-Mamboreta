@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador Menú</title>
+    <link rel="icon" type="image/png" href="images/LogoMamboreta.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Panel de Administración Menú Mamboretá</h2>
+        <p class="text-center">Bienvenido, aquí puedes gestionar el Menú.</p>
+
+        <div class="text-right mb-3">
+            <button class="btn btn-primary" onclick="agregarMenu()">Agregar Nuevo Platillo</button>
+        </div>
+
+        <!-- Tabla de Menu -->
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Categoría</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="menu-list"></tbody>
+        </table>
+    </div>
+
+    <!-- Modal para agregar nuevo platillo -->
+    <div class="modal fade" id="modalAgregarPlatillo" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Agregar Nuevo Platillo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAgregarPlatillo">
+                        <div class="form-group">
+                            <label for="nombre">Categoría</label>
+                            <input type="text" class="form-control" id="categoria" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Descripción</label>
+                            <input type="text" class="form-control" id="descripcion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Imagen</label>
+                            <input type="text" class="form-control" id="imagen" required>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Platillo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar un platillo -->
+    <div class="modal fade" id="modalEditarPlatillo" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Editar Platillo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarPlatillo">
+                        <div class="form-group">
+                            <label for="nombre">Categoría</label>
+                            <input type="text" class="form-control" id="categoria" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Descripción</label>
+                            <input type="text" class="form-control" id="descripcion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Imagen</label>
+                            <input type="text" class="form-control" id="imagen" required>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Platillo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para eliminar reservación -->
+    <div class="modal fade" id="modalEliminarPlatillo" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEliminarLabel">Eliminar Platillo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar el siguiente platillo?</p>
+                    <ul>
+                        <li><strong>Categoría:</strong> <span id="eliminar-categoria"></span></li>
+                        <li><strong>Nombre:</strong> <span id="eliminar-nombre"></span></li>
+                        <li><strong>Descripción:</strong> <span id="eliminar-descripcion"></span></li>
+                        <li><strong>Imagen:</strong> <span id="eliminar-imagen"></span></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="btnConfirmarEliminar">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function agregarMenu() {
+            $('#modalAgregarPlatillo').modal('show');
+        }
+    </script>
+
+    <script>
+        function editarMenu() {
+            $('#modalEditarPlatillo').modal('show');
+        }
+    </script>
+
+    <script>
+        function eliminarMenu() {
+            $('#modalEliminarPlatillo').modal('show');
+        }
+    </script>
+
+    <script type="module" src="menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
